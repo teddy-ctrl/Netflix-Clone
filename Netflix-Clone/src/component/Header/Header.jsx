@@ -25,7 +25,11 @@ const Header = () => {
           <div className="header-icon-link">
             <div><SearchIcon /></div>
             <div><NotificationsNoneIcon /></div>
-            <div><AccountBoxIcon /></div>
+            <div><AccountBoxIcon />
+                {/* <div className="dropdown">
+                  <p>Sign Out of Netflix</p>
+                </div> */}
+              </div>
             <div><KeyboardArrowDownIcon /></div>
           </div>
         </div>

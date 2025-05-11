@@ -49,3 +49,25 @@
   gap: 15px;
   cursor: pointer;
 }
+
+/* .header-icon-link .dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  width: max-content;
+  background: #191919;
+  padding: 10px 22px;
+  border-radius: 2px;
+  text-decoration: underline;
+  z-index: 1;
+  display: none;
+}
+
+.header-icon-link .dropdown p {
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.header-icon-link:hover .dropdown {
+  display: block;
+} */

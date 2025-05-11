@@ -1,4 +1,4 @@
-.header-continer{
+/* .header-continer{
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,7 +48,7 @@
   align-items: center;
   gap: 15px;
   cursor: pointer;
-}
+} */
 
 /* .header-icon-link .dropdown {
   position: absolute;
@@ -71,3 +71,291 @@
 .header-icon-link:hover .dropdown {
   display: block;
 } */
+
+
+
+/* General Header Styles */
+.header-container {
+    display: flex;
+    justify-content: center; /* Center the wrapper */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: transparent; /* Start transparent */
+    height: 68px; /* Netflix typical height */
+    color: #e5e5e5; /* Lighter text color */
+    transition: background-color 0.4s ease-in-out;
+    z-index: 100;
+    width: 100%;
+}
+
+.header-container.scrolled {
+    background-color: rgb(20, 20, 20); /* Solid black when scrolled */
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 95%; /* Slightly more width */
+    max-width: 1800px; /* Max width for very large screens */
+    margin: 0 auto;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Gap between logo and nav links */
+}
+
+.header-logo {
+    width: 90px; /* Adjusted size */
+    height: auto;
+    cursor: pointer;
+}
+
+/* Navigation Links - Desktop */
+.header-nav-links {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.header-nav-links li {
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.header-nav-links li:hover {
+    color: #b3b3b3; /* Lighter gray on hover */
+}
+
+/* Right side icons */
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-icon-link {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Increased gap for better spacing */
+}
+
+.header-icon {
+    cursor: pointer;
+    font-size: 1.5rem !important; /* Consistent icon size */
+}
+
+/* Profile Menu */
+.profile-menu-container {
+    position: relative;
+}
+
+.profile-activator {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.profile-arrow-icon {
+    transition: transform 0.3s ease-in-out;
+}
+
+.profile-arrow-icons.open {
+    transform: rotate(180deg);
+}
+
+.profile-dropdown {
+    position: absolute;
+    top: calc(100% + 15px); /* Space from activator */
+    right: 0;
+    width: max-content;
+    min-width: 180px; /* Minimum width for dropdown */
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    z-index: 110; /* Above header content */
+    padding-top: 10px; /* Padding for items */
+    padding-bottom: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+.profile-dropdown::before { /* Arrow pointing up */
+    content: '';
+    position: absolute;
+    top: -7px; /* Position it above the border */
+    right: 15px; /* Align with AccountBoxIcon or arrow */
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid rgba(0, 0, 0, 0.9); /* Same as dropdown bg */
+}
+
+
+.profile-dropdown p {
+    font-size: 13px;
+    padding: 8px 15px;
+    margin: 0;
+    cursor: pointer;
+    color: #e5e5e5;
+    transition: background-color 0.2s ease;
+}
+
+.profile-dropdown p:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.profile-dropdown .dropdown-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 8px 0;
+}
+.profile-dropdown .sign-out:hover {
+    text-decoration: underline;
+}
+
+
+/* Mobile Menu Toggle Icon */
+.mobile-menu-toggle {
+    display: none; /* Hidden by default, shown on mobile */
+    cursor: pointer;
+    z-index: 120; /* Above everything if nav is open */
+}
+.mobile-menu-toggle svg {
+    font-size: 2rem !important;
+}
+
+
+
+
+
+/* Responsive adjustments */
+
+/* Tablet and Smaller (e.g., up to 950px - Netflix uses this breakpoint often) */
+@media (max-width: 950px) {
+    .header-nav-links {
+        display: none; /* Hide main nav links */
+        /* Styles for when it's 'open' on mobile */
+        position: absolute;
+        top: 68px; /* Below header */
+        left: 0;
+        width: 100%; /* Full width */
+        background-color: rgb(20, 20, 20); /* Same as scrolled header */
+        flex-direction: column;
+        align-items: flex-start; /* Align text to left */
+        padding: 10px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+        z-index: 90; /* Below sticky header, but above page content */
+    }
+
+    .header-nav-links.open {
+        display: flex; /* Show when toggled */
+    }
+
+    .header-nav-links li {
+        padding: 12px 20px; /* More padding for touch */
+        width: 100%; /* Full width list items */
+        box-sizing: border-box;
+        font-size: 1rem;
+    }
+    .header-nav-links li:hover {
+        background-color: rgba(255,255,255,0.05);
+    }
+
+
+    .mobile-menu-toggle {
+        display: flex; /* Show toggle icon */
+        align-items: center;
+    }
+
+    /* Optional: if header becomes too crowded, hide some icons on very small screens */
+    /* For example, hide search or notifications */
+}
+
+/* Smaller mobile screens (e.g., up to 500px) */
+@media (max-width: 500px) {
+    .header-logo {
+        width: 80px;
+    }
+    .header-left {
+        gap: 10px;
+    }
+    .header-right {
+        gap: 10px;
+    }
+    .header-icon-link {
+        gap: 10px;
+    }
+    .header-icon {
+        font-size: 1.3rem !important;
+    }
+    .profile-dropdown {
+        min-width: 160px;
+    }
+}
+
+
+/* ... your existing CSS ... */
+
+/* Styling for the KeyboardArrowDownIcon used as mobile nav toggle */
+.mobile-nav-arrow {
+    transition: transform 0.3s ease-in-out !important; /* Ensure transition applies */
+}
+.mobile-nav-arrow.open {
+    transform: rotate(180deg) !important; /* Rotates the arrow up when nav is open */
+}
+
+/* Styling for the AccountBoxIcon in the profile activator if it should change */
+.profile-icon-main {
+    transition: opacity 0.2s ease;
+}
+.profile-icon-main.active {
+    opacity: 0.7; /* Example: slightly dim when dropdown is open */
+}
+
+/* IF YOU ADD BACK THE SEPARATE ARROW FOR PROFILE DROPDOWN: */
+.profile-dropdown-arrow {
+    transition: transform 0.3s ease-in-out;
+    margin-left: 5px; /* Space from AccountBoxIcon */
+}
+.profile-dropdown-arrow.open {
+    transform: rotate(180deg);
+}
+/* Ensure profile-activator can hold both if you use the separate arrow */
+.profile-activator {
+    display: flex;
+    align-items: center;
+    /* gap: 5px; /* Uncomment if using separate arrow */
+}
+
+
+/* Enhanced Profile Dropdown Styles */
+.profile-dropdown-user {
+    display: flex;
+    align-items: center;
+    padding: 10px 15px; /* Consistent padding */
+    color: #e5e5e5;
+}
+.profile-dropdown-user span {
+    font-size: 14px;
+    margin-left: 8px;
+}
+
+.dropdown-divider-bold {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.25); /* Slightly thicker or different color */
+    margin: 0 0 5px 0; /* Margin before first item */
+}
+/* Ensure existing .dropdown-divider is for between items */
+.profile-dropdown .dropdown-divider {
+    border: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    margin: 8px 0;
+}

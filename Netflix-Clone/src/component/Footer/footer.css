@@ -1,126 +1,282 @@
-.footer-continer{
+
+.footer-continer {
     width: 65%;
     margin: 0 auto;
     padding-top: 40px;
+    padding-bottom: 40px; 
+    color: rgb(117, 117, 117); /* Default text color for the footer section */
 }
-.ready-to-watch{
+
+.ready-to-watch {
     text-align: center;
     color: #ffffff;
     padding-bottom: 15px;
+    font-size: 1.2rem; /* Slightly larger base size */
 }
-.footer-get-started{
+
+.footer-get-started {
     margin: 0 auto;
- 
     align-items: center;
     justify-content: center;
+    margin-bottom: 50px; /* Space below the form */
 }
+
 .inputContainer {
     display: flex;
-    gap: 3rem;
-    align-items: flex-end;
+    gap: 0.5rem; /* Reduced initial gap for better scaling */
+    align-items: stretch; /* Make items same height by default */
     justify-content: center;
-    align-items: center; 
-    width: 50%;
-    justify-content: center;
-    align-items: center;
+    width: 75%; /* Increased initial width, adjust as needed */
     margin: 0 auto;
+    min-height: 56px; /* Ensure container has min height for button */
 }
 
 .emailInputWrapper {
     position: relative;
-    width: 60%; 
+    flex-grow: 1; /* Allow input to take available space */
 }
 
 .emailInputBox {
-    padding: 1.5rem 1rem 0.5rem 1rem; 
-    border-radius: 5px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
+    padding: 1.5rem 1rem 0.5rem 1rem;
+    border-radius: 4px; /* Netflix uses 4px radius often */
+    border: 1px solid rgba(140, 140, 140, 0.7); /* Slightly darker border */
     outline: none;
-    background-color: rgba(0, 0, 0, 0.3); 
-    width: 100%; 
+    background-color: rgba(22, 22, 22, 0.7); /* Darker semi-transparent bg */
+    width: 100%;
     color: #ffffff;
-    font-size: 1rem; 
+    font-size: 1rem;
     transition: border-color 0.3s, background-color 0.3s;
+    height: 100%; /* Fill the wrapper */
+    box-sizing: border-box;
 }
-
 
 .emailInputBox:focus {
     border-color: #ffffff;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(30, 30, 30, 0.8);
 }
-
 
 .emailLabel {
     position: absolute;
-    top: 50%; 
-    left: 1rem; 
+    top: 50%;
+    left: 1rem;
     transform: translateY(-50%);
     color: rgba(255, 255, 255, 0.7);
-    font-size: 1rem; 
-    pointer-events: none; 
+    font-size: 1rem;
+    pointer-events: none;
     transition: all 0.2s ease-out;
-    background-color: transparent; 
+    background-color: transparent; /* Ensure no bg clipping */
 }
-
 
 .emailInputBox:focus + .emailLabel,
 .emailInputBox:not(:placeholder-shown) + .emailLabel {
-    top: 0.5rem; 
-    transform: translateY(0); 
-    font-size: 0.75rem; 
-    color: rgba(255, 255, 255, 0.9); /
-  
+    top: 0.75rem; /* Adjusted for better padding */
+    transform: translateY(0);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.9);
 }
 
-
 .getStartedButton {
-    width: 25%; 
+    /* width: 25%; Remove fixed width, use flex-basis or padding */
+    flex-shrink: 0; /* Prevent button from shrinking too much */
+    padding: 0 1.5rem; /* Use padding for width control, or set min-width */
+    min-width: 150px; /* Minimum width for the button text */
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #e50914;
     color: #ffffff;
-    font-size: 1.2rem; 
-    font-weight: 700;
+    font-size: 1.2rem; /* Adjusted for consistency */
+    font-weight: 500; /* Netflix typical weight */
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
-    padding: 1rem; 
-    align-self: stretch; 
+    display: flex; /* For aligning text if needed */
+    align-items: center;
+    justify-content: center;
+    /* align-self: stretch; Remove if causing issues, ensure height matches input */
+    height: 60px; /* Match input height */
+    box-sizing: border-box;
 }
 
 .getStartedButton:hover {
-    background-color: #ff1a1a;
+    background-color: #f40612; /* Brighter red on hover */
 }
 
-.questions{
+.questions {
     padding-top: 40px;
 }
+
 .footer-link {
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap; /* Allow wrapping for responsiveness */
     margin: 0 auto;
-    color: #ffffff;
-    padding-top: 30px;
+    /* color: #ffffff; Color is set on .footer-links */
+    padding-top: 20px; /* Reduced padding */
 }
-.ask-us{
-    color: #ffffff;
+
+/* Styling for each column of links */
+.footer-link > div {
+    flex-basis: 23%; /* Approximately 4 columns */
+    margin-bottom: 20px; /* Space between rows when wrapped */
+    min-width: 150px; /* Prevent columns from becoming too narrow */
 }
+
+.ask-us {
+    /* color: #ffffff; Already default in container, specific for this element */
+    color: rgb(117, 117, 117);
+    font-size: 1rem;
+    margin-bottom: 30px; /* Add margin from link list */
+}
+.ask-us.footer-links { /* If .ask-us also has .footer-links */
+    text-decoration: none;
+    cursor: default;
+}
+
+
 .footer-links {
     cursor: pointer;
-    padding-top: 15px;
-    text-decoration: underline;
-    color: rgb(151, 149, 149);
-
+    padding-top: 12px; /* Slightly reduced padding */
+    font-size: 0.875rem; /* 14px */
+    color: rgb(117, 117, 117);
+    text-decoration: none; /* Netflix footer links are usually not underlined */
 }
+.footer-links:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
 
 .choose-countery {
-    padding-top: 50px;
-}
-.countery-choose {
-    color: rgb(151, 149, 149);
-    padding-top: 50px;
+    padding-top: 30px; /* Reduced padding */
+    font-size: 0.875rem;
 }
 
-.countery-choose a{
-    color: rgb(85, 83, 235);
+
+.countery-choose {
+    color: rgb(117, 117, 117);
+    padding-top: 20px; /* Reduced padding */
+    line-height: 1.5;
+}
+
+.countery-choose a {
+    color: #0071eb; /* Standard blue link color */
+    text-decoration: none;
+}
+.countery-choose a:hover {
+    text-decoration: underline;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablets and Large Mobile (e.g., up to 1024px) */
+@media (max-width: 1024px) {
+    .footer-continer {
+        width: 80%;
+    }
+    .inputContainer {
+        width: 90%;
+    }
+    .getStartedButton {
+        font-size: 1.1rem; /* Slightly smaller text */
+        padding: 0 1.2rem;
+        min-width: 130px;
+    }
+}
+
+/* Tablets (e.g., up to 768px) */
+@media (max-width: 768px) {
+    .footer-continer {
+        width: 90%;
+    }
+    .ready-to-watch {
+        font-size: 1.1rem;
+    }
+    .inputContainer {
+        width: 100%;
+        flex-direction: column; /* Stack input and button */
+        gap: 1rem; /* Gap when stacked */
+        align-items: center; /* Center items when stacked */
+    }
+    .emailInputWrapper {
+        width: 100%;
+        max-width: 500px; /* Max width for input on mobile */
+    }
+    .emailInputBox {
+        height: 50px; /* Fixed height for mobile input */
+    }
+    .getStartedButton {
+        width: auto; /* Allow padding to define width */
+        max-width: 250px; /* Max width for button on mobile */
+        font-size: 1rem;
+        padding: 0.9rem 1rem; /* Adjust padding for stacked button */
+        height: 50px; /* Fixed height for mobile button */
+    }
+
+    .footer-link > div {
+        flex-basis: 48%; /* 2 columns */
+        min-width: 130px;
+    }
+    .ask-us {
+        text-align: left; /* Align to left on smaller screens */
+    }
+}
+
+/* Mobile (e.g., up to 480px) */
+@media (max-width: 480px) {
+    .footer-continer {
+        width: 95%;
+        padding-top: 20px;
+    }
+    .ready-to-watch {
+        font-size: 1rem;
+        padding-bottom: 10px;
+    }
+    .footer-get-started {
+        margin-bottom: 30px;
+    }
+
+    /* Input container items already stacked from 768px breakpoint */
+    .emailInputWrapper {
+        max-width: none; /* Allow full width if needed */
+    }
+    .getStartedButton {
+        font-size: 0.9rem;
+        padding: 0.8rem 1rem;
+        min-width: auto; /* Button can be smaller */
+        width: fit-content; /* Fit the content, e.g., "Get Started >" */
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+    /* Optional: if you want the button to be wider on small mobile */
+    /* .getStartedButton {
+        width: 100%;
+        max-width: 300px;
+    } */
+
+    .questions {
+        padding-top: 20px;
+    }
+    .ask-us {
+        margin-bottom: 20px;
+    }
+
+    .footer-link {
+        padding-top: 10px;
+        justify-content: flex-start; /* Align columns to start */
+    }
+    .footer-link > div {
+        flex-basis: 100%; /* 1 column for links on very small screens */
+        text-align: left; /* Align text to left */
+        margin-bottom: 10px; /* Reduced space between link items when in 1 column */
+    }
+    .footer-links {
+        padding-top: 8px;
+        font-size: 0.8rem;
+    }
+    .choose-countery {
+        padding-top: 20px;
+        font-size: 0.8rem;
+    }
+    .countery-choose {
+        padding-top: 15px;
+    }
 }

@@ -73,7 +73,7 @@ const Header = () => {
                         <ul ref={mobileNavRef} className={`header-nav-links ${isMobileNavOpen ? 'open' : ''}`}>
                             <li>Home</li>
                             <li>TV Shows</li>
-                            <li>Movies</li>
+                            <li>Movies</li>                            
                             <li>Latest</li>
                             <li>My List</li>
                             <li>Browse by Languages</li>

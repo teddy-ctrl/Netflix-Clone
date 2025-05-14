@@ -95,6 +95,7 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
       try {
         const url = await movieTrailer(movie?.title || movie?.name || movie?.original_name || '');
         const urlParams = new URLSearchParams(new URL(url).search);
+        console.log()
         setTrailerUrl(urlParams.get('v'));
       } catch (error) {
         console.error('Error fetching trailer:', error);

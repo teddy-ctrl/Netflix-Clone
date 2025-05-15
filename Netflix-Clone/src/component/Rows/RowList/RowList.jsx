@@ -5,6 +5,7 @@ import requests from '../../../utils/requests'
 const RowList = () => {
   return (
     <>
+     <div className="rows-area">
       <Row 
       title = 'NETFLIX ORIGINAL'
       fetchUrl = {requests.fetchNetflixOriginals}
@@ -42,6 +43,7 @@ const RowList = () => {
       title = 'Tv Show'
       fetchUrl = {requests.fetchTvShow}
       />
+      </div>
     </>
   )
 }

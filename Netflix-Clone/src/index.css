@@ -1,9 +1,56 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif;
+  /* font-family: Netflix Sans, Helvetica Neue, Segoe UI, Roboto, Ubuntu, sans-serif; */
   
 }
-body {
+/* body {
     background-color: #111;
+} */
+
+/* App.css or your main global stylesheet */
+
+/* Basic body/app styling (you likely have this) */
+body {
+  background-color: #111; /* Or your app's main background color */
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
+
+.app {
+  /* Any overall app styling */
+  background-color: #111; /* Ensure this matches banner fade for seamlessness */
+}
+
+/*
+This is the key part for the overlap.
+It assumes your Banner component has a .banner_fadeBottom element
+that creates a fade to the app's background color (#111 in this case).
+*/
+.rows-area {
+  position: relative; /* Establishes a stacking context */
+  /*
+    Pull the rows area up. The value should be slightly less than
+    the height of your Banner's fade effect (e.g., .banner_fadeBottom).
+    If .banner_fadeBottom is 12rem high, try -10rem or -11rem here.
+    You'll need to adjust this based on your Banner's fade height.
+  */
+  margin-top: -10rem; /* --- ADJUST THIS VALUE --- */
+  z-index: 10;       /* Ensure rows are visually on top of the banner's base,
+                         but 'under' the visual fade effect.
+                         The banner_fadeBottom itself might have a z-index too. */
+}
+
+/*
+  The .row-component-container (root of your Row.js) already has:
+  .row-component-container {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  This is good as 'position: relative' allows it to participate correctly
+  in the stacking context set by .rows-area.
+*/

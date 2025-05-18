@@ -91,7 +91,6 @@ const Header = () => {
                                     <AccountBoxIcon
                                         className={`header-icon profile-icon-main ${isProfileDropdownOpen ? 'active' : ''}`}
                                     />
-                               
                                 </div>
                                 {isProfileDropdownOpen && (
                                     <div className="profile-dropdown">

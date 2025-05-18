@@ -102,22 +102,24 @@
     padding: 0.6rem 1.5rem;
   }
 }
-
 @media (max-width: 768px) {
   .banner {
-    height: 65vh; 
+    height: 65vh;
     min-height: 350px;
+    justify-content: flex-end; 
   }
   .banner_contents {
     margin-left: 20px;
-    padding-top: 100px;
+    margin-right: 20px; 
+    padding-top: 0; 
+    padding-bottom: calc(10rem + 2rem); 
+    max-width: 90%; 
   }
   .banner_title {
     font-size: 2rem;
   }
   .banner_description {
     font-size: 0.85rem;
-    max-width: 90%; 
     padding-top: 0.5rem;
 
   }
@@ -129,7 +131,7 @@
     font-size: 0.85rem;
   }
   .banner_fadeBottom {
-    height: 10rem; 
+    height: 10rem;
   }
 }
 

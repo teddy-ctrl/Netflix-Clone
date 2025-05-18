@@ -1,5 +1,10 @@
 import React from "react";
 import "./footer.css";
+import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined';
+import InstagramIcon from '@mui/icons-material/Instagram';
+import XIcon from '@mui/icons-material/X';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 
 const Footer = () => {
   return (
@@ -31,7 +36,13 @@ const Footer = () => {
               </div>
             </form>
           </div>
-          r
+          <div className="socalMediaLink">
+            <FacebookOutlinedIcon className="socalLink" />
+            <InstagramIcon className="socalLink"/>
+            <XIcon className="socalLink"/>
+            <LinkedInIcon className="socalLink"/>
+            <WhatsAppIcon className="socalLink"/>
+          </div>
           <div className="questions">
             <p className="ask-us footer-links">Questions? Contact us.</p>
             <div className="footer-link">

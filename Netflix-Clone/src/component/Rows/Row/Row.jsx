@@ -12,11 +12,11 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
   // Default aspect ratio based on your 1200x761 preferred size
   const PLAYER_ASPECT_RATIO = 761 / 1200;
-  const PLAYER_MAX_WIDTH = 1200; // Max width you want the player to reach
+  const PLAYER_MAX_WIDTH = 1200; 
 
   const [playerOpts, setPlayerOpts] = useState({
-    height: '390', // Initial default, will be overridden
-    width: '100%', // Player will take 100% width of its container
+    height: '390', 
+    width: '100%', 
     playerVars: {
       autoplay: 1,
     },
@@ -51,11 +51,8 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
         setPlayerOpts(prevOpts => ({
           ...prevOpts,
-          // The 'width' in opts for react-youtube can be '100%' 
-          // if its direct wrapper controls the actual pixel width.
-          // The height needs to be in pixels.
+        
           height: String(newHeight), 
-          // width: String(newWidth) // Alternatively, set pixel width here too
         }));
       }
     };
@@ -124,16 +121,13 @@ const Row = ({ title, fetchUrl, isLargeRow }) => {
 
       {trailerUrl && (
         <div className="trailer-modal" onClick={closePlayer}>
-          {/*
-            Assign ref to the element that will directly contain the YouTube player
-            or whose width dictates the player's width.
-          */}
+          
           <div 
             ref={playerContainerRef}
             className="trailer-modal-content" 
             onClick={(e) => e.stopPropagation()} // Prevent modal close on player click
           >
-            {/* Optional: Add a close button explicitly */}
+           
             <button className="close-trailer-button" onClick={closePlayer} aria-label="Close trailer">×</button>
             <YouTube 
               videoId={trailerUrl} 

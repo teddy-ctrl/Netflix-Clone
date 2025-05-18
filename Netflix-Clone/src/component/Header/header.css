@@ -8,14 +8,14 @@
     background-color: transparent; 
     height: 68px; 
     color: #e5e5e5; 
-    transition: background-color 0.4s ease-in-out;
+    transition: background-color 0.6s ease-in-out;
     z-index: 100;
     width: 100%;
 }
 
-/* .header-container.scrolled {
+.header-container.scrolled {
     background-color: rgb(20, 20, 20); 
-} */
+}
 
 .header-wrapper {
     display: flex;
